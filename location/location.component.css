@@ -1,0 +1,48 @@
+ul{
+margin:100px auto;
+background-color: lightblue;
+/* width:95%; */
+}
+h2{
+  color:white;
+  text-shadow: 1px 1px 10px darkred;
+}
+li{
+    margin-bottom:5px;;
+}
+button {
+  width: 90px;
+  height: 50px;
+  margin: 0auto;
+}
+ .but{
+  background-color: blue;
+  color: white;
+  margin: 0.5% 0%;
+  width: 100px;
+  text-align:center;
+}
+.logout , .md-res{
+  background-color: red;
+  color:white;
+      margin: 0.5% 0%;
+  width: 100px;
+  text-align:center;
+}
+
+.logout{
+  background-color: palevioletred;
+}
+h1{
+  font-size: 50px;
+  color: brown;
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.btn-danger{
+background-color:red;
+}

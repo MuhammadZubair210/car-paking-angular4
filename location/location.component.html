@@ -1,0 +1,89 @@
+<button md-button class="but" routerLink="/users">My Booking</button>
+<button md-button class="but" routerLink="/userfeedback">FeedBack</button>
+<button md-button class="logout" (click)="logout()">Logout</button>
+
+
+<ul>
+  <li>
+    <h2>Admin Added Locations</h2>
+  </li>
+  <md-card>
+    <li *ngFor="let place of array;let i=index">
+      <ngb-accordion #acc="ngbAccordion" (click)="bookslot();locationvalue(place.locationName)">
+        <ngb-panel id="toggle-1" title="{{place.locationName}}">
+          <ng-template ngbPanelContent>
+            <input type="date" name="date" [(ngModel)]="this.data.userdate">
+            <md-select placeholder="Select Time" [(ngModel)]="this.data.userstarttime">
+              <md-option value="09:00">09:00</md-option>
+              <md-option value="10:00">10:00</md-option>
+              <md-option value="11:00">11:00</md-option>
+              <md-option value="12:00">12:00</md-option>
+              <md-option value="13:00">13:00</md-option>
+              <md-option value="14:00">14:00</md-option>
+              <md-option value="15:00">15:00</md-option>
+              <md-option value="16:00">16:00</md-option>
+              <md-option value="17:00">17:00</md-option>
+              <md-option value="18:00">18:00</md-option>
+              <md-option value="19:00">19:00</md-option>
+              <md-option value="20:00">20:00</md-option>
+            </md-select>
+            <md-select placeholder="Select Duration" type="duration" name="duration" [(ngModel)]="this.data.duration">
+              <md-option value="1">1 hour</md-option>
+              <md-option value="2">2 hours</md-option>
+              <md-option value="3">3 hours</md-option>
+              <md-option value="4">4 hours</md-option>
+              <md-option value="5">5 hours</md-option>
+            </md-select>
+            <!-- <div *ngIf="norefresh"> -->
+            <button type="button" class="btn btn-danger" (click)="slotcheck()" data-toggle="modal" data-target="#myModal" [disabled]="!this.data.userdate || !this.data.userstarttime || !this.data.duration">Check Slots</button>
+
+            <!-- </div> -->
+            <!-- <div *ngIf="refresh">
+              <button (click)="showrefresh()">refresh</button>
+            </div> -->
+            <br>
+            <div>
+
+              <div *ngIf="check">
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Real time Booking System</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Total slots</p>
+                            <button md-raised-button *ngFor="let button of place.slots" (click)="butvalue(button)">{{button}}</button>
+                        <br>
+                        <br>
+                        <p>Already Reserved Slots For This Time</p>
+                        <button class="md-res" md-raised-button *ngFor="let res of s_service.reserve">{{ res }}</button>
+                        <br>
+                        <button md-raised-button color="primary" (click)="submit()">Done</button>
+                        <div *ngIf="alert">
+                          <div class="alert alert-success">
+                            <strong>Success!</strong> Desired slot booked thank you!!!.
+                          </div>
+                        </div>
+                        <div *ngIf="noalert">
+                          <div class="alert alert-danger">
+                            <strong>Unsuccessfull!</strong>Not booked this slot might be a reserved one.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="cleararray()">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </li>
+  </md-card>
+  <br>
+</ul>

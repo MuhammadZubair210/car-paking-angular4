@@ -1,0 +1,32 @@
+.sendd{
+    text-align: center;
+}
+
+.chat{
+    width: 50%;
+    margin: 0 auto;
+}
+.logout{
+    background-color: palevioletred;
+    color:white;
+}
+.but{
+    background-color: blue;
+    color:white;
+}
+
+.admin {
+    border: transparent;
+    /* border-radius: 30px; */
+    width: 100%;
+    background-color: lightpink;
+    
+    color:white;
+}
+.user {
+    border: transparent;
+    width:180px;
+    /* border-radius: 30px; */
+    /* background-color: lightseagreen; */
+    color:black;
+}

@@ -1,0 +1,15 @@
+button{
+    background-color: darkblue;
+    color:white;
+}
+
+.remove{
+    background-color: red;
+}
+.logout{
+    background-color: palevioletred;
+}
+.but{
+    background-color: blue;
+    color:white;
+}

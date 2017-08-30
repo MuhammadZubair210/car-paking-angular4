@@ -1,0 +1,29 @@
+
+
+<div>
+<md-card>
+  <h1>Register</h1>
+
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="name" type="text" name="text" [(ngModel)]="name">
+    </md-input-container><br>
+    <md-input-container>
+      <input mdInput placeholder="Email" type="email" name="email" [(ngModel)]="email">
+    </md-input-container><br>
+    <md-input-container>
+      <input mdInput placeholder="Password" type="password" name="password" [(ngModel)]="password">
+    </md-input-container><br>
+    <md-radio-group [(ngModel)]="type">
+      <md-radio-button value="user" selected="selected">user</md-radio-button>
+       <!-- <md-radio-button value="admin">admin</md-radio-button>  -->
+    </md-radio-group><br>
+    <button class="same" md-button (click)="register()" [disabled]="!email || !password || !type">Register</button>
+
+  </div>
+
+  <br>
+  <p>already registered?<a routerLink="/login">login</a></p>
+</md-card >
+</div>
+<!-- <button routerLink="/admin">admin</button> -->

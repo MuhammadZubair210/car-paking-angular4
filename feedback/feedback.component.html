@@ -1,0 +1,51 @@
+<button md-button class="but" routerLink="/admin">Admin Home</button>
+<button md-button class="but" routerLink="/allbookings">All bookings</button>
+<button md-button class="but" routerLink="/allusers">All Users</button>
+<button md-button class="logout" (click)="logout()">Logout</button>
+
+
+<div fxFlex="25" class="firstdiv">
+  <md-card>
+    <md-card-title>All users</md-card-title>
+    <div *ngFor="let user of allusersprofile; let i = index">
+      <button *ngIf="user.name != 'admin'" md-raised-button (click)="findd(i)">{{user.name}}</button>
+    </div>
+
+  </md-card>
+
+</div>
+
+
+
+<md-card class="chat">
+  <md-card-title>Reply User</md-card-title>
+
+
+  <div *ngFor="let item of profiles | async" >
+    <div *ngIf="item.name=='admin'">
+
+      <p class="admin">{{ item.name }} : {{ item.message }} </p>
+
+    </div>
+    <div *ngIf="item.name!='admin'">
+      <div>
+        <!-- <span>{{ item.name }} : </span> -->
+        <span  class="user">{{ item.name }} :  {{ item.messagess }}</span>
+      </div>
+    </div>
+  </div>
+
+</md-card>
+
+<md-card class="send">
+  <md-card-title>Send Message</md-card-title>
+
+  <div>
+
+    <md-input-container>
+      <input mdInput placeholder="New Message" type="text" [(ngModel)]="adminreply" />
+    </md-input-container>
+    <button md-raised-button color="primary" (click)="reply()">Send</button>
+  </div>
+
+</md-card>

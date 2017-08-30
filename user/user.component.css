@@ -1,0 +1,22 @@
+.example-card {
+    margin: 0.5% 0%;  
+}
+
+
+.remove{
+    float: right;
+    background-color: red;
+    color:white;
+}
+.logout{
+    background-color: palevioletred;
+    color:white;
+}
+.but{
+    background-color: blue;
+    color:white;
+}
+
+ul{
+    list-style-type: none;
+}

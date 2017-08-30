@@ -1,0 +1,35 @@
+<button class="but" md-button routerLink="/admin">Admin home</button>
+<button class="but" md-button routerLink="/allbookings">All bookings</button>
+<button class="but" md-button routerLink="/feedback">Feedback</button>
+<button class="logout" md-button (click)="logout()">Logout</button>
+
+<md-card>
+<div class="container">
+  <md-card class="card">
+    <div>
+      <h2>Registered Users</h2>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Remove</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of user;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.email}}</td>
+          <td> <button class="btn btn-danger" (click)="del(i)">Remove</button></td>
+        </tr>
+      </tbody>
+      <br><br>
+      <button class="btn btn-info" routerLink="/admin">cancel</button>
+    </table>
+  </md-card>
+</div>
+</md-card>

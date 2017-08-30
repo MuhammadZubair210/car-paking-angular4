@@ -1,0 +1,38 @@
+button{
+    background-color: darkblue;
+    color:white;
+}
+
+.main{
+     width: 40%; 
+    margin: 2% 1%;
+    float: left;
+}
+
+.all-content{
+    margin:2% 1%;
+}
+
+.submit{
+    background-color: lightblue;
+    color: white;
+    border:none;
+    width:150px;
+}
+.logout{
+    background-color: palevioletred;
+}
+
+h2{
+    font-size: 20px;
+}
+.locations{
+    width: 40%; 
+    float:right;
+    margin: 2% 1%;
+}
+.remove{
+    background-color: red;
+    color:white;
+    float: right;
+}

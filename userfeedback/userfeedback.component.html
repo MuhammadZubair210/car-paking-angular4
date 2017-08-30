@@ -1,0 +1,35 @@
+<button md-button class="but" routerLink="/location">Book Slot</button>
+<button md-button class="but" routerLink="/userfeedback">FeedBack</button>
+<button md-button class="logout" (click)="logout()">Logout</button>
+
+
+
+
+<md-card class="chat">
+  <md-card-title>Direct chat with admin</md-card-title>
+
+
+  <div *ngFor="let item of profiles | async">
+    <div *ngIf="item.name=='admin'">
+
+      <p class="admin">{{ item.name }} : {{ item.message }} </p>
+
+    </div>
+    <div *ngIf="item.name!='admin'">
+      <div>
+        <!-- <span>{{ item.name }} => </span> -->
+        <span class="user">{{ item.name }} : {{ item.messagess }}</span>
+      </div>
+    </div>
+  </div>
+
+</md-card>
+
+<div class="sendd">
+
+  <md-input-container>
+    <input mdInput placeholder="New Message" type="text" [(ngModel)]="message" />
+  </md-input-container>
+
+  <button md-raised-button color="primary" (click)="send()">Send</button>
+</div>

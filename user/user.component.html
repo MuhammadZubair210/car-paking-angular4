@@ -1,0 +1,25 @@
+<div>
+    <button md-button class="but" routerLink="/location">Book slot</button>
+    <button md-button class="but" routerLink="/userfeedback">FeedBack</button>
+    <button md-button class="logout" (click)="logout()">Logout</button>
+</div>
+
+
+
+<md-card class="example-card" *ngFor="let key of keys;let i=index">
+    <ul>
+        <h4>BOOKING DETAILS</h4>
+        <li><strong>Email:</strong>{{key.UserEmail}}</li>
+        <li><strong>Booking Location:</strong>{{key.location}}</li>
+        <li><strong>Duration:</strong>{{key.duration}}</li>
+        <li><strong> Slot No:</strong>{{key.slot}}</li>
+        <li><strong>Booking Date:</strong>{{key.userdate}}</li>
+        <li><strong>  Start Time:</strong>{{key.userstarttime}}</li>
+        <li><strong> End Time:</strong>{{key.userendtime}}</li>
+        <li><button class="remove" md-button (click)="delete(i)">Cancel Booking</button></li>
+    </ul>
+    <hr>
+</md-card>
+<br>
+<br>
+<br>

@@ -1,0 +1,8 @@
+<md-toolbar color="primary">Realtime Parking System
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <div *ngIf="service.varauth | async">
+        <p>{{service.useremail}}</p>
+    </div>
+</md-toolbar>
+<router-outlet></router-outlet>

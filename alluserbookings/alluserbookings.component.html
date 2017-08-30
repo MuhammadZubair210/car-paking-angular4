@@ -1,0 +1,37 @@
+<button class="but" md-button routerLink="/admin">Admin home</button>
+<button class="but" md-button routerLink="/allusers">All Users</button>
+<button class="but" md-button routerLink="/feedback">Feedback</button>
+<button class="logout" md-button (click)="logout()">Logout</button>
+<md-card>
+<div class="container">
+  <h2>Active Booking Details</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>NO</th>
+        <th>UserEmail</th>
+        <th>Location</th>
+        <th>SlotNo</th>
+        <th>UserDate</th>
+        <th>Duration</th>
+        <th>UserStartTime</th>
+        <th>UserEndTime</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of bookingdetails;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{data.UserEmail}}</td>
+        <td>{{data.location}}</td>
+        <td>{{data.slot}}</td>
+        <td>{{data.userdate}}</td>
+        <td>{{data.duration}}</td>
+        <td>{{data.userstarttime}}</td>
+        <td>{{data.userendtime}}</td>
+        <button class="btn btn-danger">booked</button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</md-card>

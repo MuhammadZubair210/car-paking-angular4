@@ -1,0 +1,37 @@
+.admin {
+    border: transparent;
+    /* border-radius: 30px; */
+    width: 100%;
+    background-color: lightpink;
+    
+    color:white;
+}
+.user {
+    border: transparent;
+    width:180px;
+    /* border-radius: 30px; */
+    /* background-color: lightseagreen; */
+    color:black;
+}
+
+.boxWidth {
+    overflow: auto;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.send, .chat{
+    width: 50%;
+    margin: 0 auto;
+}
+.firstdiv{
+    float:right;
+}
+
+.logout{
+    background-color: palevioletred;
+}
+.but{
+    background-color: blue;
+    color:white;
+}

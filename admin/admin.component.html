@@ -1,0 +1,38 @@
+<button md-button routerLink="/allbookings">All bookings</button>
+<button md-button routerLink="/allusers">All Users</button>
+<button md-button routerLink="/feedback">Feedback</button>
+<button class="logout" md-button (click)="logout()">Logout</button>
+<br>
+<div class="all-content">
+  <form [formGroup]="form" (ngSubmit)="addLocations()">
+    <md-card class="main">
+      <div>
+        <h2>Add New Locations</h2>
+      </div>
+      <br>
+      <md-input-container>
+        <input mdInput type="number" placeholder="total slots" formControlName="totalSlots" required>
+      </md-input-container>
+      <br>
+      <md-input-container>
+        <input mdInput type="text" placeholder="location name" formControlName="locationName" required>
+      </md-input-container>
+      <br>
+      <input md-button class="submit" type="submit" name="button" value="submit" >
+    </md-card>
+  </form>
+</div>
+
+<div>
+<md-card class="locations">
+  <h2>All Locations</h2>
+  <hr>
+ <div *ngFor="let places of array;let i=index">
+   <p><strong>Location Name:</strong>{{places.locationName}}</p>
+   <p><strong>Total number of slots:</strong>{{places.totalSlots}}</p>
+    <button class="remove" md-button (click)="remove(i)">Delete Location</button>
+    <hr>
+ </div>
+
+</md-card>
+</div>
